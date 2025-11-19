@@ -1,0 +1,14 @@
+version: '3'
+tasks:
+  run:
+    desc: 运行程序
+    cmds:
+      - go run ./cmd/myapp
+  build:
+    desc: 构建 Windows exe
+    cmds:
+      # -s -w 去掉调试符号，减小体积
+      - go build -ldflags="-s -w" -o bin/myapp.exe ./cmd/myapp
+  lint:
+    cmds:
+      - golangci-lint run
