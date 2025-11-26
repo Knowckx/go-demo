@@ -16,6 +16,8 @@ var (
 func init() {
 	var err error
 	RootPath, err = infa.FindProjectRoot()
+	// println(RootPath, err)
+
 	if err != nil {
 		// 既然是核心路径，如果找不到，程序通常无法继续运行，panic 是可以接受的
 		slog.Error("严重错误：无法定位项目根目录", "err", err)
@@ -24,5 +26,11 @@ func init() {
 
 	// 顺便初始化关联路径
 	PicPath = filepath.Join(RootPath, "cache", "pictures")
-	slog.Info("项目根目录初始化完成", RootPath)
+	slog.Info("项目根目录初始化完成", "RootPath", RootPath)
+}
+
+// slog的用法
+func SlogPrint() {
+	slog.Info("Infa", "version", infa.Version1)
+	slog.Info("启动服务", "port", 8080, "env", "dev")
 }

@@ -3,7 +3,7 @@ module github.com/Knowckx/go-demo
 go 1.25.4
 
 require (
-	github.com/Knowckx/infa v0.0.0-20251126112656-3d2ed45baa3c
+	github.com/Knowckx/infa v0.0.0-20251126141634-609d143c6277
 	github.com/spf13/cobra v1.10.1
 )
 

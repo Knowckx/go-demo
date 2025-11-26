@@ -23,6 +23,7 @@ var rootCmd = &cobra.Command{
 }
 
 func main() {
+
 	// 1. 设置结构化日志 (JSON格式适合生产环境，Text适合开发环境)
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 	slog.SetDefault(logger)
